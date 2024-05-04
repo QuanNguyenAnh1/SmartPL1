@@ -1,0 +1,10 @@
+^C:\USERS\ADMIN\DOCUMENTS\CAR-PARKING-MAIN\CAR-PARKING-MAIN\BUILD\CMAKEFILES\63EAEA356E287496F9FA78D10D2A7662\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Admin/Documents/Car-Parking-main/Car-Parking-main -BC:/Users/Admin/Documents/Car-Parking-main/Car-Parking-main/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/Admin/Documents/Car-Parking-main/Car-Parking-main/build/car-parking.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

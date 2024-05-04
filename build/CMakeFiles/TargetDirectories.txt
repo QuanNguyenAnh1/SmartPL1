@@ -1,0 +1,3 @@
+C:/Users/Admin/Documents/Car-Parking-main/Car-Parking-main/build/CMakeFiles/car-parking.dir
+C:/Users/Admin/Documents/Car-Parking-main/Car-Parking-main/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/Admin/Documents/Car-Parking-main/Car-Parking-main/build/CMakeFiles/ZERO_CHECK.dir
