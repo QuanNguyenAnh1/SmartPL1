@@ -302,6 +302,9 @@ std::vector<cv::Mat> ImageProcessor::readImagesFromFolder( std::string& folderPa
     return images;
 }
 
+////////////////////////////////////////////////////Code tiền xử lí và lọc edge trong ảnh/////////////////////////////////////////////
+
+
 cv::Mat ImageProcessor::blur_image(cv::Mat image) {
     cv::Mat blurred_image = image.clone();
     std::vector<int> kernel_sizes = {3, 3};
@@ -354,6 +357,10 @@ cv::Mat ImageProcessor::visualize_lines(cv::Mat image, std::vector<cv::Vec4i>& l
     }
     return image;
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////Code lọc các line là cạnh của ô đỗ xe trong bãi////////////////////////////////////////
 
 std::vector<cv::Vec4i> ImageProcessor::merge_lines(std::vector<cv::Vec4i>& lines, char type) {
     std::vector<cv::Vec4i> merged_lines;
@@ -492,7 +499,8 @@ std::pair<std::vector<cv::Vec4i>, std::vector<cv::Vec4i>> ImageProcessor::detect
 
     return { adjusted_horizontal_lines, adjusted_vertical_lines };
 }
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                
 cv::Mat ImageProcessor::draw_parking_spaces( cv::Mat& image,  std::vector<cv::Vec4i>& lines,  char type,const std::string& filename) {
     cv::Mat image_copy = image.clone();
 
