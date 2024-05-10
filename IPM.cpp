@@ -4,7 +4,7 @@ using namespace cv;
 using namespace std;
 
 //Public
-///////////////////////////////////////////////////////////Bước 2 : Biến đổi ảnh bằng các điểm ảnh và điểm ánh xạ ////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////Bước 2 : Biến đổi ảnh bằng các điểm ảnh và điểm ánh xạ (Step 2)
 IPM::IPM( const cv::Size& _origSize, const cv::Size& _dstSize, const std::vector<cv::Point2f>& _origPoints, const std::vector<cv::Point2f>& _dstPoints )
 	: m_origSize(_origSize), m_dstSize(_dstSize), m_origPoints(_origPoints), m_dstPoints(_dstPoints)
 {
