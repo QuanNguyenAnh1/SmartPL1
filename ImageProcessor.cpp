@@ -5,7 +5,7 @@ ImageProcessor::ImageProcessor() {
 ImageProcessor::~ImageProcessor() {
 }
 
-//////////////////////////Bước 1 : xác định 4 điểm ảnh ////////////////////////////////////////////////////////
+//////////////////////////Bước 1 : xác định 4 điểm ảnh (Step 1)
 
 cv::Mat ImageProcessor::preprocessImage( cv::Mat& image) {
     int xMargin = 2;  
@@ -251,7 +251,7 @@ cv::Mat ImageProcessor::drawPoints(cv::Mat image, std::vector<cv::Point2f> point
     return image;
 }
 
-///////////////////////////////////////Bước 3 : Ghép các ảnh đã biến đổi thành ảnh hoàn chỉnh///////////////////////////////////////////
+///////////////////////////////////////Bước 3 : Ghép các ảnh đã biến đổi thành ảnh hoàn chỉnh (Step 3)
 
 cv::Mat ImageProcessor::mergeImages( std::vector<cv::Mat>& images) {
     cv::Mat complete_img = cv::Mat::zeros(images[0].size(), images[0].type());
@@ -306,7 +306,7 @@ std::vector<cv::Mat> ImageProcessor::readImagesFromFolder( std::string& folderPa
     return images;
 }
 
-//////////////////////////////////////////////////// Bước 4 : Tiền xử lý và lọc cạnh /////////////////////////////////////////////
+//////////////////////////////////////////////////// Bước 4 : Tiền xử lý và lọc cạnh (Step 4)
 
 
 cv::Mat ImageProcessor::blur_image(cv::Mat image) {
@@ -363,7 +363,7 @@ cv::Mat ImageProcessor::visualize_lines(cv::Mat image, std::vector<cv::Vec4i>& l
 }
 
 
-///////////////////////////////////Bước 5: Lọc ra các cạnh có khả năng là cạnh của ô đỗ xe////////////////////////////////////////
+///////////////////////////////////Bước 5: Lọc ra các cạnh có khả năng là cạnh của ô đỗ xe (Step 5)
 
 std::vector<cv::Vec4i> ImageProcessor::merge_lines(std::vector<cv::Vec4i>& lines, char type) {
     std::vector<cv::Vec4i> merged_lines;
@@ -503,8 +503,7 @@ std::pair<std::vector<cv::Vec4i>, std::vector<cv::Vec4i>> ImageProcessor::detect
     return { adjusted_horizontal_lines, adjusted_vertical_lines };
 }
 
-///////////////////////////////////////////////////Bước 6 : Nhóm các cạnh thành các ô đỗ trong bãi xe và vẽ hộp biểu thị/////////////////////////////////
-                
+///////////////////////////////////////////////////Bước 6 : Nhóm các cạnh thành các ô đỗ trong bãi xe và vẽ hộp biểu thị (Step 6)
 cv::Mat ImageProcessor::draw_parking_spaces( cv::Mat& image,  std::vector<cv::Vec4i>& lines,  char type,const std::string& filename) {
     cv::Mat image_copy = image.clone();
 
