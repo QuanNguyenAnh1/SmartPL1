@@ -52,7 +52,7 @@ int main( int _argc, char** _argv )
     string origPointsFolder = _argv[2];
     string dstPointsFolder = _argv[3];
 
-    //////////////////Bước 1
+    //////////////////Bước 1 (step 1)
     for (int i = 1; i <= 6; ++i) {
         string imageFileName = imageFolder + "/" + to_string(i) + ".jpg";
         inputImg = imread(imageFileName);
@@ -72,7 +72,7 @@ int main( int _argc, char** _argv )
         //
         int width = inputImg.cols;
         int height = inputImg.rows;
-    /////////////////Bước 2
+    /////////////////Bước 2 (step 2)
         // The 4-points at the input image    
         vector<Point2f> origPoints = readPointsFromFile(origPointsFolder + "/" + to_string(i) + ".txt");
         if (origPoints.size() != 4) {
@@ -104,7 +104,7 @@ int main( int _argc, char** _argv )
         imwrite(outputFile, result_points);
         cout << "Output image saved as: " << outputFile << endl;
     }
-    ///////////////////Bước 3
+    ///////////////////Bước 3 (step 3)
     ImageProcessor prc;
     std::string folderPath = "IPM";
     std::vector<cv::Mat> imgs = prc.readImagesFromFolder(folderPath);
@@ -112,12 +112,12 @@ int main( int _argc, char** _argv )
     string merge_img_file = "img_process/result.jpg";
     imwrite(merge_img_file, merge_img);
 
-    //////////////////Bước 4
+    //////////////////Bước 4 (step 4)
     cv::Mat edges_image = prc.edge_detect(merge_img);
     string edges_image_file = "img_process/edge.jpg";
     imwrite(edges_image_file, edges_image);
 
-    ///////////////////Bước 5
+    ///////////////////Bước 5 (step 5)
     std::pair<std::vector<cv::Vec4i>, std::vector<cv::Vec4i>> lines = prc.detect_lines(edges_image);
     std::vector<cv::Vec4i> horizontal_lines = lines.first;
     std::vector<cv::Vec4i> vertical_lines = lines.second;
@@ -129,7 +129,7 @@ int main( int _argc, char** _argv )
     string lines_image_file = "img_process/line.jpg";
     imwrite(lines_image_file, line_image);
 
-    ///////////////////Bước 6
+    ///////////////////Bước 6 (step 6)
     cv::Mat box_image = cv::Mat::zeros(gray_image.size(), CV_8UC1);
     string box_image_file = "img_process/box.jpg";
     // box_image = prc.draw_parking_spaces(box_image,vertical_lines,'v');
