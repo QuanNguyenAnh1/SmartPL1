@@ -5,7 +5,7 @@ ImageProcessor::ImageProcessor() {
 ImageProcessor::~ImageProcessor() {
 }
 
-//////////////////////////Bước 1 : xác định 4 điểm ảnh (Step 1)
+////////////////////////// (Step 1)
 
 cv::Mat ImageProcessor::preprocessImage( cv::Mat& image) {
     int xMargin = 2;  
