@@ -9,5 +9,5 @@ cmake -B .\build\
 cmake --build .\build\
 ```
 ```bash
-build\Debug\car-parking.exe img Points\origin Points\destination (chạy lại code chỉ cần dùng lệnh này)
+build\Debug\car-parking.exe img Points\origin Points\destination
 ```
